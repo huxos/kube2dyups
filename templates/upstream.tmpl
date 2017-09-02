@@ -1,0 +1,11 @@
+{{ range $index, $endpoints := .Endpoints -}}
+server {{ $endpoints.IP }}:{{ $endpoints.Port }};
+{{ else -}}
+server 127.0.0.1:1111;
+{{ end -}}
+{{ if eq "test_nginx1_" .Name -}}
+server 10.33.12.113:80; #add the server out of kubernetes
+keepalive 200;
+{{ else if eq "test_nginx_web" .Name -}}
+keepalive 100;
+{{ end -}}

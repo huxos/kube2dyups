@@ -1,0 +1,5 @@
+{{ range $name, $endpoints := .RouteTable -}}
+upstream  {{ $name }} {
+{{ template "upstream.tmpl" $endpoints -}}
+}
+{{ end -}}

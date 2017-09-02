@@ -1,0 +1,33 @@
+package: github.com/AdoHe/kube2nginx
+import:
+- package: github.com/golang/glog
+- package: github.com/prometheus/client_golang
+  version: v0.8.0
+  subpackages:
+  - prometheus
+- package: github.com/spf13/pflag
+  version: v1.0.0
+- package: k8s.io/apimachinery
+  version: abe34e4f5b4413c282a83011892cbeea5b32223b
+  subpackages:
+  - pkg/fields
+  - pkg/types
+  - pkg/util/runtime
+  - pkg/util/sets
+  - pkg/util/wait
+  - pkg/watch
+- package: k8s.io/apiserver
+  version: 149fc2228647cea28b0670c240ec582e985e8eda
+  subpackages:
+  - pkg/server/healthz
+  - pkg/util/flag
+  - pkg/util/logs
+- package: k8s.io/client-go
+  version: df46f7f13b3da19b90b8b4f0d18b8adc6fbf28dc
+  subpackages:
+  - kubernetes
+  - pkg/api/v1
+  - tools/cache
+  - tools/clientcmd
+  - tools/clientcmd/api
+  - util/flowcontrol
